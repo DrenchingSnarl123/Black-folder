@@ -38,28 +38,32 @@
   <div style="position: relative; text-align: center; padding: 2em;">
 
     <!-- HINT RIDDLE (watermark style) -->
-    <div style="
-      position: absolute;
-      top: 55%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: rgba(0,255,0,0.07);
-      font-size: 0.95em;
-      font-style: italic;
-      pointer-events: none;
-      user-select: none;
-      line-height: 1.4;
-      max-width: 90%;
-    ">
-      “The code you seek is split in two—<br>
-      One rides with her in subtle hue.<br>
-      Beneath her steps, the first half lies,<br>
-      Where quiet threads conceal the prize.<br>
-      The rest is bound to iron and steam,<br>
-      A phantom’s trick on a midnight gleam.<br>
-      Observe the train, let none remain—<br>
-      The answer lives in cloth and train.”
-    </div>
+    <!-- Faded riddle centered on the screen -->
+<div style="
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgba(0,255,0,0.08);
+  font-size: 0.9em;
+  font-style: italic;
+  text-align: center;
+  line-height: 1.5;
+  pointer-events: none;
+  user-select: none;
+  max-width: 90%;
+  z-index: 0;
+">
+  “The code you seek is split in two—<br>
+  One rides with her in subtle hue.<br>
+  Beneath her steps, the first half lies,<br>
+  Where quiet threads conceal the prize.<br>
+  The rest is bound to iron and steam,<br>
+  A phantom’s trick on a midnight gleam.<br>
+  Observe the train, let none remain—<br>
+  The answer lives in cloth and train.”
+</div>
+
 
     <!-- Visible UI -->
     <h1>ENTER AUTHORIZATION CODE</h1>
@@ -69,7 +73,7 @@
 
     <!-- Beep audio -->
     <audio id="beep" preload="auto">
-      <source src="data:audio/wav;base64,UklGRigAAABXQVZFZm10IBAAAAABAAEAIlYAAESsAAACABAAZGF0YQcAAAAA//////8=" type="audio/wav">
+  <source src="data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAESsAACJWAAACABAAZGF0YRAAAAAA/////////////////////w==" type="audio/wav">
     </audio>
   </div>
 
