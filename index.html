@@ -87,7 +87,26 @@
       if (code === "4869A7") {
         window.location.href = "Classified.html";
       } else {
-        document.getElementById("errorMsg").textContent = "Access Denied: Incorrect Code.";
+        document.getElementById("errorMsg").innerHTML = 
+  `<span id="hintTrigger" style="cursor: pointer; color: red;">
+     Access Denied: Incorrect Code.
+   </span>`;
+   
+document.getElementById("hintTrigger").onclick = () => {
+  document.getElementById("errorMsg").innerHTML = `
+    <span style="color: lime; font-size: 0.9em; font-style: italic;">
+      “The code you seek is split in two—<br>
+      One rides with her in subtle hue.<br>
+      Beneath her steps, the first half lies,<br>
+      Where quiet threads conceal the prize.<br>
+      The rest is bound to iron and steam,<br>
+      A phantom’s trick on a midnight gleam.<br>
+      Observe the train, let none remain—<br>
+      The answer lives in cloth and train.”
+    </span>
+  `;
+};
+
       }
     }
   </script>
