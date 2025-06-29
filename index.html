@@ -35,23 +35,63 @@
   </style>
 </head>
 <body>
-  <h1>ENTER AUTHORIZATION CODE</h1>
-  <input type="text" id="codeInput" placeholder="Enter Code">
-  <button onclick="checkCode()">Submit</button>
-  <div id="errorMsg" class="error"></div>
+  <div style="position: relative; text-align: center; padding: 2em;">
+
+    <!-- HINT RIDDLE (watermark style) -->
+    <div style="
+      position: absolute;
+      top: 55%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: rgba(0,255,0,0.07);
+      font-size: 0.95em;
+      font-style: italic;
+      pointer-events: none;
+      user-select: none;
+      line-height: 1.4;
+      max-width: 90%;
+    ">
+      “The code you seek is split in two—<br>
+      One rides with her in subtle hue.<br>
+      Beneath her steps, the first half lies,<br>
+      Where quiet threads conceal the prize.<br>
+      The rest is bound to iron and steam,<br>
+      A phantom’s trick on a midnight gleam.<br>
+      Observe the train, let none remain—<br>
+      The answer lives in cloth and train.”
+    </div>
+
+    <!-- Visible UI -->
+    <h1>ENTER AUTHORIZATION CODE</h1>
+    <input type="text" id="codeInput" placeholder="Enter Code" maxlength="10" autocomplete="off">
+    <button onclick="checkCode()">Submit</button>
+    <div id="errorMsg" class="error"></div>
+
+    <!-- Beep audio -->
+    <audio id="beep" preload="auto">
+      <source src="data:audio/wav;base64,UklGRigAAABXQVZFZm10IBAAAAABAAEAIlYAAESsAAACABAAZGF0YQcAAAAA//////8=" type="audio/wav">
+    </audio>
+  </div>
 
   <script>
-    function checkCode() {
-      const input = document.getElementById("codeInput").value.trim();
-      const correctCode = "4869A7";
+    const input = document.getElementById("codeInput");
+    const beep = document.getElementById("beep");
 
-      if (input === correctCode) {
-        window.location.href = "Classified.html";
+    input.addEventListener("input", () => {
+      beep.currentTime = 0;
+      beep.play();
+    });
+
+    function checkCode() {
+      const code = input.value.trim();
+      if (code === "4869A7") {
+        window.location.href = "black-folder/Classified.html";
       } else {
         document.getElementById("errorMsg").textContent = "Access Denied: Incorrect Code.";
       }
     }
   </script>
 </body>
+
 </html>
 
