@@ -13,20 +13,45 @@
       text-align: center;
       padding: 2em;
     }
-    .redacted {
+    input {
       background: black;
-      color: black;
-      border-bottom: 1px solid lime;
+      color: lime;
+      border: 1px solid lime;
+      padding: 0.5em;
+      margin-top: 1em;
     }
-    code {
-      color: cyan;
+    button {
+      background: black;
+      color: lime;
+      border: 1px solid lime;
+      padding: 0.5em 1em;
+      margin-left: 1em;
+      cursor: pointer;
+    }
+    .error {
+      color: red;
+      margin-top: 1em;
     }
   </style>
 </head>
 <body>
-  <h1>🔒 BLACK ORGANIZATION ARCHIVE</h1>
-  <p>Access restricted. Clearance required.</p>
-  <p>To proceed, append the access code to the URL after <code>/black-folder/</code></p>
-  <p>Example: <code>drenchingsnarl123.github.io/black-folder/xdcfvghbj</code></p>
+  <h1>ENTER AUTHORIZATION CODE</h1>
+  <input type="text" id="codeInput" placeholder="Enter Code">
+  <button onclick="checkCode()">Submit</button>
+  <div id="errorMsg" class="error"></div>
+
+  <script>
+    function checkCode() {
+      const input = document.getElementById("codeInput").value.trim();
+      const correctCode = "4869A7";
+
+      if (input === correctCode) {
+        window.location.href = "black-folder/Classified.html";
+      } else {
+        document.getElementById("errorMsg").textContent = "Access Denied: Incorrect Code.";
+      }
+    }
+  </script>
 </body>
 </html>
+
